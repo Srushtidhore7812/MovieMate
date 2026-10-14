@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Your Movie Recommendations</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <h1>
+            🎬 Hello {{ name }}!
+        </h1>
+
+        <p class="subtitle">
+            Here are your movie recommendations
+        </p>
+
+
+        {% if recommendations %}
+
+
+            {% for movie in recommendations %}
+
+
+                <div class="movie-card">
+
+                    <h2>
+                        🎬 {{ movie.name }}
+                    </h2>
+
+
+                    <p>
+                        <b>Genre:</b>
+                        {{ movie.genre }}
+                    </p>
+
+
+                    <p>
+                        <b>Language:</b>
+                        {{ movie.language }}
+                    </p>
+
+
+                    <p>
+                        <b>Mood:</b>
+                        {{ movie.mood }}
+                    </p>
+
+
+                    <p>
+                        <b>Matching Score:</b>
+                        {{ movie.score }}/7
+                    </p>
+
+
+                </div>
+
+
+            {% endfor %}
+
+
+        {% else %}
+
+
+            <div class="movie-card">
+
+                <h2>
+                    No Recommendations Found 😔
+                </h2>
+
+                <p>
+                    Please try different preferences.
+                </p>
+
+            </div>
+
+
+        {% endif %}
+
+
+        <a href="/" class="back-button">
+            ← Try Again
+        </a>
+
+
+    </div>
+
+</body>
+
+</html>

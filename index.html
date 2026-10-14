@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Movie Recommendation System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <h1>🎬 Movie Recommender</h1>
+
+        <p class="subtitle">
+            Find movies according to your preferences
+        </p>
+
+
+        <form action="/recommend" method="POST">
+
+
+            <label>Enter Your Name</label>
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                required
+            >
+
+
+            <label>Select Genre</label>
+
+            <select name="genre" required>
+
+                <option value="">
+                    Choose Genre
+                </option>
+
+                <option value="Comedy">
+                    Comedy
+                </option>
+
+                <option value="Drama">
+                    Drama
+                </option>
+
+                <option value="Romance">
+                    Romance
+                </option>
+
+                <option value="Action">
+                    Action
+                </option>
+
+                <option value="Sci-Fi">
+                    Sci-Fi
+                </option>
+
+            </select>
+
+
+            <label>Select Language</label>
+
+            <select name="language" required>
+
+                <option value="">
+                    Choose Language
+                </option>
+
+                <option value="Hindi">
+                    Hindi
+                </option>
+
+                <option value="English">
+                    English
+                </option>
+
+            </select>
+
+
+            <label>Select Your Mood</label>
+
+            <select name="mood" required>
+
+                <option value="">
+                    Choose Mood
+                </option>
+
+                <option value="Happy">
+                    Happy
+                </option>
+
+                <option value="Motivational">
+                    Motivational
+                </option>
+
+                <option value="Romantic">
+                    Romantic
+                </option>
+
+                <option value="Excited">
+                    Excited
+                </option>
+
+                <option value="Emotional">
+                    Emotional
+                </option>
+
+                <option value="Curious">
+                    Curious
+                </option>
+
+            </select>
+
+
+            <button type="submit">
+                🎬 Get Recommendations
+            </button>
+
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
